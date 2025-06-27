@@ -1,3 +1,5 @@
+import 'package:flashlight/pages/light_clear/light_clear_binding.dart';
+import 'package:flashlight/pages/light_clear/light_clear_view.dart';
 import 'package:flashlight/pages/light_first/light_first_binding.dart';
 import 'package:flashlight/pages/light_first/light_first_view.dart';
 import 'package:flashlight/pages/light_refresh/light_refresh_binding.dart';
@@ -8,6 +10,7 @@ import 'package:flashlight/pages/light_tab/light_tab_binding.dart';
 import 'package:flashlight/pages/light_tab/light_tab_view.dart';
 import 'package:flashlight/pages/light_third/light_third_binding.dart';
 import 'package:flashlight/pages/light_third/light_third_view.dart';
+import 'package:flashlight/pages/light_third/light_third_write.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages:Rainbow,
-      initialRoute: '/light_tab',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -71,28 +74,19 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
         ),
-        cardTheme: const CardTheme(
-          color: Colors.white,
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-          ),
-        ),
         dialogTheme: const DialogTheme(
           actionsPadding: EdgeInsets.only(right: 10, bottom: 5),
-        ),
-        dividerTheme: DividerThemeData(
-          thickness: 1,
-          color: Colors.grey[200],
         ),
       ),
     );
   }
 }
 List<GetPage<dynamic>> Rainbow = [
-  GetPage(name: '/light_first', page: () => LightFirstPage(), binding: LightFirstBinding()),
-  GetPage(name: '/light_second', page: () => LightSecondPage(), binding: LightSecondBinding()),
+  GetPage(name: '/', page: () => const LightClearView(), binding: LightClearBinding()),
+  GetPage(name: '/light_first', page: () => const LightFirstPage(), binding: LightFirstBinding()),
+  GetPage(name: '/light_second', page: () => const LightSecondPage(), binding: LightSecondBinding()),
   GetPage(name: '/light_refresh', page: () => const LightRefreshView(), binding: LightRefreshBinding()),
+  GetPage(name: '/light_re', page: () => LightThirdWrite()),
   GetPage(name: '/light_third', page: () => LightThirdPage(), binding: LightThirdBinding()),
   GetPage(name: '/light_tab', page: () => LightTabPage(), binding: LightTabBinding()),
 ];

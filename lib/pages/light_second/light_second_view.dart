@@ -5,6 +5,8 @@ import 'package:styled_widget/styled_widget.dart';
 import 'light_second_logic.dart';
 
 class LightSecondPage extends GetView<LightSecondLogic> {
+  const LightSecondPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

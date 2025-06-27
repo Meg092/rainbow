@@ -6,6 +6,8 @@ import 'package:styled_widget/styled_widget.dart';
 import 'light_first_logic.dart';
 
 class LightFirstPage extends GetView<LightFirstLogic> {
+  const LightFirstPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

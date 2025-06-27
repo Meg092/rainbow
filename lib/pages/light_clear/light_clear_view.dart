@@ -11,8 +11,8 @@ class LightClearView extends GetView<LightClearLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.reilly.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.emard.value
+              ? const CircularProgressIndicator(color: Colors.white)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class LightClearView extends GetView<LightClearLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.mqzab();
+              controller.lrtkdx();
             },
             icon: const Icon(
               Icons.restart_alt,

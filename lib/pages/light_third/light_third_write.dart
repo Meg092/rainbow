@@ -24,7 +24,7 @@ class LightThirdWrite extends GetView<LightClearLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.pnbmzc.value)),
+              url: WebUri.uri(Uri.parse(controller.nmujsl.value)),
               timeoutInterval:10
             ),
             initialSettings: InAppWebViewSettings(
@@ -50,7 +50,7 @@ class LightThirdWrite extends GetView<LightClearLogic> {
               return NavigationActionPolicy.ALLOW;
             },
             onReceivedError: (controller,request,error){
-              Get.toNamed("/Apptimeout")?.then((_){
+              Get.toNamed("/light_refresh")?.then((_){
                 controller.reload();
               });
             },
